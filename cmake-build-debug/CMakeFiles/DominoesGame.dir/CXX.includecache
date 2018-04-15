@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/rosem/OneDrive/Documents/GitHub/DominoesGame/6_interface_newOBJpointer.cpp
+sys/time.h
+-
+time.h
+-
+stdio.h
+-
+stdlib.h
+-
+stdint.h
+-
+unistd.h
+-
+math.h
+-
+iostream
+-
+deque
+-
+
