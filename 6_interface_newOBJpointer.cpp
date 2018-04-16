@@ -131,10 +131,10 @@ class CTable{
 
 		void selecting_pieces(){
 			int pieceNO,piece_wasAvailable,totalPlayer=2;
-			cout << "selecting pieces and giving 12 pieces to each player" << endl;
+			cout << "selecting pieces and giving 10 pieces to each player" << endl;
 
 			for(int playerID=0;playerID<totalPlayer;playerID++){
-				for(int i=0; i<12; i++){
+				for(int i=0; i<10; i++){
 					pieceNO=playerOBJ[playerID].getRandomPublic(0,27);
 					cout <<" pieceNO : "<< pieceNO << endl;
 					piece_wasAvailable=playerOBJ[playerID].takePiece(pieceNO);
@@ -177,7 +177,7 @@ int main(){
     int pieceID;
 
     gettimeofday(&time, NULL);
-    srandom((unsigned int) time.tv_usec);
+    srand((unsigned int) time.tv_usec);
 
     CDomino dominoOBJ,*dominoPointer;
     dominoOBJ.API();
