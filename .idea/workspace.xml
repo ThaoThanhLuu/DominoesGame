@@ -26,8 +26,8 @@
       <file leaf-file-name="6_interface_newOBJpointer.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/6_interface_newOBJpointer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="230" selection-start-line="230" selection-end-line="230" />
+            <state relative-caret-position="157">
+              <caret line="241" column="52" lean-forward="true" selection-start-line="241" selection-start-column="52" selection-end-line="241" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -111,12 +111,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524504310049</updated>
-      <workItem from="1524504311908" duration="4163000" />
+      <workItem from="1524504311908" duration="4487000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4163000" />
+    <option name="totallyTimeSpent" value="4487000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
@@ -130,7 +130,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39976135" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39976135" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -164,8 +164,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/6_interface_newOBJpointer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="230" selection-start-line="230" selection-end-line="230" />
+        <state relative-caret-position="157">
+          <caret line="241" column="52" lean-forward="true" selection-start-line="241" selection-start-column="52" selection-end-line="241" selection-end-column="52" />
         </state>
       </provider>
     </entry>
