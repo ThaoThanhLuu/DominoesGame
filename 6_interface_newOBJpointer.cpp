@@ -175,6 +175,7 @@ int main(){
 
     struct timeval time;
     int pieceID;
+	deque<data_domino> myDomino;
 
     gettimeofday(&time, NULL);
     srand((unsigned int) time.tv_usec);
@@ -194,8 +195,27 @@ int main(){
     myTableObj.API(playerOBJ);
 
     cout << "check pointer effect on dominoOBJ" << endl;
+
+	data_domino *availablePile;
+	availablePile = new data_domino[8];
+    int pileNum=0;
+
+	//add available pieces to an array
     for(pieceID=0;pieceID<28;pieceID++){
-       dominoOBJ.getPiece(pieceID);
+    	data_domino myPiece = dominoOBJ.getPiece(pieceID);
+    	if(myPiece.available){
+    		availablePile[pileNum]=myPiece;
+    		pileNum++;
+    	}
+    }
+
+	//shuffle array
+	for(int i=0;i<8;i++){
+    	//for each piece, randomly swap with another piece
+		int r = playerOBJ[0].getRandomPublic(0,7);
+		data_domino temp = availablePile[i];
+		availablePile[i] = availablePile[r];
+		availablePile[r] = temp;
     }
     delete []playerOBJ;
     return EXIT_SUCCESS;
