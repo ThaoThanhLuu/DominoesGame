@@ -217,6 +217,63 @@ int main(){
 		availablePile[i] = availablePile[r];
 		availablePile[r] = temp;
     }
+
+    //print array
+	cout << "available pieces (shuffled):" << endl;
+    for(int i=0;i<8;i++){
+    	data_domino myPiece = availablePile[i];
+		cout << " ["<< myPiece.left
+			 << "|"<< myPiece.right <<"]" << endl;
+    }
+
+    //create train
+	deque<data_domino> train;
+
+	//choose first player at random (start turns at 0 or 1)
+	int turn = playerOBJ[0].getRandomPublic(0,1);
+	cout << "Player" << turn << " starts" << endl;
+
+	bool *passed = new bool[2];
+	passed[0] = false;
+	passed[1] = false;
+
+	while(!playerOBJ[0].gotHand.empty() && !playerOBJ[0].gotHand.empty() && (!passed[0] || !passed[1])){
+		int playerTurn = turn%2;
+		//look through player's hand for domino matching head or tail
+		for(int i=0;i<playerOBJ[playerTurn].gotHand.size();i++){
+			//compare domino to head and tail
+			//if matching, attach to table/train
+				data_domino myPiece = playerOBJ[playerTurn].gotHand.at(i);
+				//remove from player's hand
+
+				cout << "player" << playerTurn << " played " << " ["<< myPiece.left
+														   << "|"<< myPiece.right <<"]" << endl;
+				deque<data_domino>::iterator it;
+				it = playerOBJ[playerTurn].gotHand.begin();
+				it += i;
+				playerOBJ[playerTurn].gotHand.erase(it);
+				passed[playerTurn] = false;
+				break;
+				//not implemented: if left attaches to head OR right attaches to tail, swap side values (left & right) for displaying
+		}
+		//if no matching and availablePile.size > 0, draw a piece from the availablePile and try to play a piece again
+		if(passed[playerTurn] && pileNum>0) {
+			data_domino takenPiece = availablePile[pileNum];
+			playerOBJ[playerTurn].gotHand.push_back(takenPiece); //draw
+			takenPiece.available = 0; // no longer available from the dominoes pile
+			cout << " [" << takenPiece.left
+				 << "|" << takenPiece.right << "]"
+				 << " just taken - no longer available from pile = "
+				 << takenPiece.available << endl;
+			takenPiece.available = 1; // available on Player's hand
+			pileNum--;
+			turn--;
+			passed[playerTurn] = false;
+		}
+
+		turn++; //go to next player
+	}
+
     delete []playerOBJ;
     return EXIT_SUCCESS;
 }
